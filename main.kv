@@ -1,0 +1,52 @@
+<Box01>:
+    BoxLayout:
+        orientation: "vertical"
+        size_hint_y: 1
+        spacing: 10
+        padding: [20,20,20,20]
+        canvas:
+            Color:
+                rgb: 255,255,255
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+
+        TextInput:
+            id: entrada
+            size_hint_y: 1
+            canvas:
+                Color:
+                    rgb: 255,255,255
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        TextInput:
+            id: salida
+            size_hint_y: 1
+            canvas:
+                Color:
+                    rgb: 255,255,0
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 1
+            size_hint_y: 0.3
+
+            Button:
+                id: trasl
+                text: "Traducir"
+                size_hint: 1,1
+                on_press: root.trasladar()
+            Button:
+                text: "Limpiar"
+                size_hint: 1,1
+                on_press: root.limpiar()
+            Button:
+                text: "Salir"
+                size_hint: 1,1
+                on_press: app.get_running_app().stop()
